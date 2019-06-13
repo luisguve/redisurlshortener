@@ -1,0 +1,31 @@
+{
+	"ImportPath": "github.com/villegasl/urlshortener.redis",
+	"GoVersion": "go1.11",
+	"GodepVersion": "v80",
+	"Deps": [
+		{
+			"ImportPath": "github.com/gomodule/redigo/redis",
+			"Comment": "v1.7.0-11-g97b6b5f",
+			"Rev": "97b6b5f36cb6147c3f94d5bff90b9a3175845d4b"
+		},
+		{
+			"ImportPath": "github.com/gorilla/mux",
+			"Comment": "v1.7.1",
+			"Rev": "c5c6c98bc25355028a63748a498942a6398ccd22"
+		},
+		{
+			"ImportPath": "github.com/konsorten/go-windows-terminal-sequences",
+			"Comment": "v1.0.2",
+			"Rev": "f55edac94c9bbba5d6182a4be46d86a2c9b5b50e"
+		},
+		{
+			"ImportPath": "github.com/sirupsen/logrus",
+			"Comment": "v1.4.2-2-g2a22dbe",
+			"Rev": "2a22dbedbad1fd454910cd1f44f210ef90c28464"
+		},
+		{
+			"ImportPath": "golang.org/x/sys/unix",
+			"Rev": "a43fa875dd822b81eb6d2ad538bc1f4caba169bd"
+		}
+	]
+}
