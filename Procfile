@@ -1,1 +1,1 @@
-web: url-shortener-microservice
+web: github.com/villegasl/urlshortener.redis
