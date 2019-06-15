@@ -43,7 +43,7 @@ func GetUrl(shortUrlId string, db redis.Conn) *Status {
 
 func SaveUrl(longUrl string, db redis.Conn) *Status {
     // Get the short_url_id to check wheher the URL is new.
-    shortUrlId, err := redis.String(db.Do("HGET", "long_url:"+longUrl, "short_url_id"))
+    shortUrlId, err := redis.String(db.Do("GET", "long_url:"+longUrl))
     switch {
     case err == redis.ErrNil:
         // At this point we are sure the url has not been shortened before.
@@ -106,9 +106,9 @@ func SaveUrl(longUrl string, db redis.Conn) *Status {
                 FailureStatus:  &FailureResponse{ Error: err.Error() },
             }
         }
-        if err = db.Send("HSET", "long_url:"+longUrl,
-                "short_url_id", shortUrlId); err != nil {
-            fmt.Println("error db.Send(HSET long_url):", err.Error())
+        if err = db.Send("SET", "long_url:"+longUrl,
+                shortUrlId); err != nil {
+            fmt.Println("error db.Send(SET long_url):", err.Error())
             return &Status {
                 Error:          err,
                 FailureStatus:  &FailureResponse{ Error: err.Error() },
